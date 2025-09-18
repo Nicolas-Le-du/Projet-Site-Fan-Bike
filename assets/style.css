@@ -236,5 +236,14 @@ header {
     margin-top: 40px;
 }
 
+.content h2 {
+    font-size: 3em;
+}
+
+.navigation {
+    display: none;
+}
+
+
 }
 
