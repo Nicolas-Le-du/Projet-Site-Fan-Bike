@@ -244,12 +244,15 @@ header {
     position: relative;
     width: 32px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.2);
+
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index: 1000;
 }
+
+
 .toggle::before {
     content: '';
     position: absolute;
@@ -258,7 +261,14 @@ header {
     background: var(--white);
     transform: translateY(-10px);
     transition: 0.25s;
+    box-shadow: 0 10px 0 var(--white);
 }
+
+.toggle.active::before {
+    transform: translateY(0) rotate(45deg);
+    box-shadow: 0 0 0 var(--white);
+}
+
 .toggle::after {
     content: '';
     position: absolute;
@@ -267,6 +277,10 @@ header {
     background: var(--white);
     transform: translateY(10px);
     transition: 0.25s;
+}
+
+.toggle.active::after {
+    transform: translateY(0) rotate(-45deg);
 }
 .navigation {
     display: none;
